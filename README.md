@@ -9,9 +9,9 @@ Welcome to the Three.js Starter Repo! This repository is designed to get you up 
 Features ⭐
 
 - Three.js: Create beautiful and interactive 3D content. 🎨
-- Bun: A fast, modern JavaScript runtime. 🐰
+- Bun: A fast, modern JavaScript runtime. 🧅
 - TypeScript: Strongly typed programming language built on JavaScript. 🔒
-- Vite: Next-generation frontend tooling. 
+- Vite: Next-generation frontend tooling. 🔨
 
 ## Prerequisites 🛠️
 
@@ -20,6 +20,8 @@ Before you begin, make sure you have the following installed:
  - bun
 
 ## Installation 📦
+
+You can create a repo using the `Use this template` button the repo, or alternatively:  
 
 Clone the repository:
 
@@ -57,6 +59,7 @@ bun run build
 ## Contributing 🤝
 
 Contributions are always welcome! Feel free to open a pull request or an issue.
-License 📄
+
+## License 📄
 
 This project is licensed under the MIT License.
