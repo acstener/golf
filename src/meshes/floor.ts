@@ -55,19 +55,19 @@ const createGolfCourse = () => {
   courseGroup.add(fairway);
   
   // Create bunkers (sand traps) with proper depth to avoid z-fighting
-  const createBunker = (x, z, radius, depth) => {
+  const createBunker = (x, z, radius) => {
     // Create a slightly depressed area for the bunker
     const bunkerRimGeometry = new THREE.RingGeometry(radius - 0.2, radius + 0.3, 32);
     const bunkerRim = new THREE.Mesh(bunkerRimGeometry, golfCourseMaterial.clone());
     bunkerRim.rotation.x = Math.PI / 2;
-    bunkerRim.position.set(x, -1.92, z);
+    bunkerRim.position.set(x, -1.90, z);
     bunkerRim.receiveShadow = true;
     
     // Create the actual sand part
     const bunkerGeometry = new THREE.CircleGeometry(radius, 32);
     const bunker = new THREE.Mesh(bunkerGeometry, bunkerMaterial);
     bunker.rotation.x = Math.PI / 2;
-    bunker.position.set(x, -1.95 - depth, z);  // Position lower to avoid z-fighting
+    bunker.position.set(x, -1.93, z);  // Raised position to make bunkers more visible
     bunker.receiveShadow = true;
     
     // Create a group for the bunker parts
@@ -79,11 +79,11 @@ const createGolfCourse = () => {
   };
   
   // Add bunkers around the green
-  courseGroup.add(createBunker(35, 8, 4, 0.1));  // Right bunker
-  courseGroup.add(createBunker(30, -8, 3, 0.1));  // Left bunker
+  courseGroup.add(createBunker(35, 8, 4));  // Right bunker
+  courseGroup.add(createBunker(30, -8, 3));  // Left bunker
   
   // Add a bunker in the middle of the fairway
-  courseGroup.add(createBunker(10, 0, 5, 0.15));
+  courseGroup.add(createBunker(10, 0, 5));
   
   // Create a lake/water hazard
   const lakeShape = new THREE.Shape();
